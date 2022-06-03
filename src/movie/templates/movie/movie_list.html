@@ -9,7 +9,8 @@
 
         <div class="head">
           <h2>RECENTLY ADDED</h2>
-          <p class="text-right"><a href="#">See all</a></p>
+        <br/>
+          <p class="text-right">{% if top or most %}<a href="{% url 'movie:movie-recent-list' %}">See all</a>{% endif %}</p>
         </div>
           {% for movie in recent %}
         <div class="movie">
@@ -34,7 +35,8 @@
       <div class="box">
         <div class="head">
           <h2>TOP RATED</h2>
-          <p class="text-right"><a href="#">See all</a></p>
+        <br/>
+          <p class="text-right">{% if recent or most %}<a href="{% url 'movie:movie-top-list' %}">See all</a>{% endif %}</p>
         </div>
           {% for movie in top %}
         <div class="movie">
@@ -56,7 +58,8 @@
       <div class="box">
         <div class="head">
           <h2>MOST COMMENTED</h2>
-          <p class="text-right"><a href="#">See all</a></p>
+        <br/>
+          <p class="text-right">{% if top or recent %}<a href="{% url 'movie:movie-most-list' %}">See all</a>{% endif %}</p>
         </div>
           {% for movie in most %}
         <div class="movie">
