@@ -20,6 +20,6 @@ from .views import MovieDetailView, MovieListView
 
 urlpatterns = [
     path('list', MovieListView.as_view(), name='movie-list'),
-    path('detail:<int:pk>', MovieDetailView.as_view(), name='movie-detail'),
+    path('<int:pk>', MovieDetailView.as_view(), name='movie-detail'),
 ]
 
