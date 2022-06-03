@@ -3,171 +3,79 @@
 {% load static %}
 {% block content %}
     <div id="main">
-        <div id="content">
-{#            <div class="box">#}
-{#                <div class="head">#}
-{#                    <h2>LATEST TRAILERS</h2>#}
-{#                    <p class="text-right"><a href="#">See all</a></p>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">X-MAN</span></span> <a href="#"><img#}
-{#                            src="{% static 'css/images/movie1.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">SPIDER MAN 2</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie2.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">SPIDER MAN 3</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie3.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">VALKYRIE</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie4.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">GLADIATOR</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie5.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie last">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">ICE AGE</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie6.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="cl">&nbsp;</div>#}
-{#            </div>#}
-{#            <div class="box">#}
-{#                <div class="head">#}
-{#                    <h2>TOP RATED</h2>#}
-{#                    <p class="text-right"><a href="#">See all</a></p>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">TRANSFORMERS</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie7.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">MAGNETO</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie8.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">KUNG FU PANDA</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie9.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">EAGLE EYE</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie10.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">NARNIA</span></span> <a href="#"><img#}
-{#                            src="{% static 'css/images/movie11.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="movie last">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">ANGELS &amp; DEMONS</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie12.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-{#                <div class="cl">&nbsp;</div>#}
-{#            </div>#}
-            {% for movie in object_list %}
-            <div class="box">
-{#                <div class="head">#}
-{#                    <h2>MOST COMMENTED</h2>#}
-{#                    <p class="text-right"><a href="#">See all</a></p>#}
-{#                </div>#}
-                <div class="movie">
-                    <div class="movie-image"><span class="play"><span class="name">{{ movie.title }}</span></span> <a href="#"><img
-                            src="{{ movie.image.url }}" alt="{{ movie.title }}"/></a></div>
-                    <div class="rating">
-                        <p>RATING</p>
-                        <div class="stars">
-                            <div class="stars-in"></div>
-                        </div>
-                        <span class="comments">12</span></div>
-                </div>
-{#                <div class="movie last">#}
-{#                    <div class="movie-image"><span class="play"><span class="name">THE PRESTIGE</span></span> <a#}
-{#                            href="#"><img src="{% static 'css/images/movie18.jpg' %}" alt=""/></a></div>#}
-{#                    <div class="rating">#}
-{#                        <p>RATING</p>#}
-{#                        <div class="stars">#}
-{#                            <div class="stars-in"></div>#}
-{#                        </div>#}
-{#                        <span class="comments">12</span></div>#}
-{#                </div>#}
-                <div class="cl">&nbsp;</div>
-            </div>
-            {% endfor %}
+           <div id="content">
+            {% if recent %}
+      <div class="box">
+
+        <div class="head">
+          <h2>RECENTLY ADDED</h2>
+          <p class="text-right"><a href="#">See all</a></p>
         </div>
+          {% for movie in recent %}
+        <div class="movie">
+          <div class="movie-image">
+{#              <span class="play"><span class="name">{{ movie.title }}</span></span>#}
+                 <a href="{% url 'movie:movie-detail' movie.pk %}">
+              <img src="{{ movie.image.url }}" alt="{{ movie.title }}" /></a> </div>
+          <div class="rating">
+            <p>RATING</p>
+            <div class="stars">
+              <div class="stars-in"> </div>
+            </div>
+            <span class="comments">12</span> </div>
+        </div>
+        {% endfor %}
+        <div class="cl">&nbsp;</div>
+      </div>
+           {% endif %}
+           {% if top %}
+
+
+      <div class="box">
+        <div class="head">
+          <h2>TOP RATED</h2>
+          <p class="text-right"><a href="#">See all</a></p>
+        </div>
+          {% for movie in top %}
+        <div class="movie">
+          <div class="movie-image">
+{#              <span class="play"><span class="name">{{ movie.title }}</span></span>#}
+               <a href="{% url 'movie:movie-detail' movie.pk %}"><img src="{{ movie.image.url}}" alt="{{ movie.title }}" /></a> </div>
+          <div class="rating">
+            <p>RATING</p>
+            <div class="stars">
+              <div class="stars-in"> </div>
+            </div>
+            <span class="comments">12</span> </div>
+        </div>
+        {% endfor %}
+        <div class="cl">&nbsp;</div>
+         {% endif %}
+      </div>
+           {% if most %}
+      <div class="box">
+        <div class="head">
+          <h2>MOST COMMENTED</h2>
+          <p class="text-right"><a href="#">See all</a></p>
+        </div>
+          {% for movie in most %}
+        <div class="movie">
+          <div class="movie-image">
+{#              <span class="play"><span class="name">{{ movie.title }}</span></span> <a href="#">#}
+             <a href="{% url 'movie:movie-detail' movie.pk %}">  <img src="{{ movie.image.url }}" alt="{{ movie.title }}" /></a> </div>
+          <div class="rating">
+            <p>RATING</p>
+            <div class="stars">
+              <div class="stars-in"> </div>
+            </div>
+            <span class="comments">12</span> </div>
+        </div>
+        {% endfor %}
+
+        <div class="cl">&nbsp;</div>
+      {% endif %}
+      </div>
+    </div>
         <div id="news">
             <div class="head">
                 <h3>NEWS</h3>

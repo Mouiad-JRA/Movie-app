@@ -16,10 +16,14 @@ Including another URLconf
 
 from django.urls import path
 
-from .views import MovieDetailView, MovieListView
+from .views import MovieDetailView, MovieListView, MovieRecentListView, MovieTopListView, MovieMostListView
 
+app_name = 'movie'
 urlpatterns = [
-    path('list', MovieListView.as_view(), name='movie-list'),
+    path('', MovieListView.as_view(), name='movie-list'),
+    path('recent', MovieRecentListView.as_view(), name='movie-recent-list'),
+    path('most', MovieMostListView.as_view(), name='movie-most-list'),
+    path('top', MovieTopListView.as_view(), name='movie-top-list'),
     path('<int:pk>', MovieDetailView.as_view(), name='movie-detail'),
 ]
 
