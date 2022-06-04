@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 
@@ -20,7 +20,6 @@ class MovieListView(ListView):
 
 
 class MovieRecentListView(ListView):
-
     queryset = Movie.objects.all().filter(status='R')
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -52,7 +51,6 @@ class MovieDetailView(DetailView):
 
     def get_object(self, queryset=None):
         obj = super(MovieDetailView, self).get_object()
-
         return obj
 
     def get_context_data(self, **kwargs):
@@ -64,5 +62,14 @@ class MovieDetailView(DetailView):
         return ctx
 
 
+class MovieCategory(ListView):
+    model = Movie
 
+    def get_queryset(self):
+        self.category = self.kwargs['category']
+        return Movie.objects.filter(category=self.category)
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        ctx = super(MovieCategory, self).get_context_data(**kwargs)
+        ctx['movie_category'] = self.category
+        return ctx
