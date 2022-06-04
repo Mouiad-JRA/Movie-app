@@ -42,8 +42,15 @@ class MovieDetailView(DetailView):
 class MovieCategory(ListView):
     model = Movie
 
-    def get_queryset(self):
+    def dispatch(self, request, *args, **kwargs):
         self.category = self.kwargs['category']
+        return super(MovieCategory, self).dispatch(request, *args, **kwargs)
+
+    def __init__(self, **kwargs):
+        super().__init__()
+        self.category = None
+
+    def get_queryset(self):
         return Movie.objects.filter(category=self.category)
 
     def get_context_data(self, *, object_list=None, **kwargs):
