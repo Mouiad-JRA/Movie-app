@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 from django.views.generic import ListView, DetailView
 
-from .models import Movie
+from .models import Movie, MovieLinks
 
 
 class MovieListView(ListView):
@@ -20,7 +20,7 @@ class MovieListView(ListView):
 
 
 class MovieRecentListView(ListView):
-    template_name = 'templates/movie/recently.html'
+
     queryset = Movie.objects.all().filter(status='R')
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -30,7 +30,6 @@ class MovieRecentListView(ListView):
 
 
 class MovieTopListView(ListView):
-    template_name = 'templates/movie/top.html'
     queryset = Movie.objects.all().filter(status='T')
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -40,7 +39,6 @@ class MovieTopListView(ListView):
 
 
 class MovieMostListView(ListView):
-    template_name = 'templates/movie/most.html'
     queryset = Movie.objects.all().filter(status='M')
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -51,3 +49,17 @@ class MovieMostListView(ListView):
 
 class MovieDetailView(DetailView):
     model = Movie
+
+    def get_object(self, queryset=None):
+        obj = super(MovieDetailView, self).get_object()
+        # TODO: fix this, it's increased by two
+        obj.view_count += 1
+        obj.save()
+        return obj
+
+    def get_context_data(self, **kwargs):
+        ctx = super(MovieDetailView, self).get_context_data()
+        ctx['links'] = MovieLinks.objects.filter(movie=self.get_object())
+        return ctx
+
+
