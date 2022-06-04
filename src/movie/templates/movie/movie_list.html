@@ -3,97 +3,24 @@
 {% load static %}
 {% block content %}
     <div id="main">
-        {% if movie_category %}
 
-
+        <div id="content">
             {% for movie in object_list %}
+                <div class="box">
                 <div class="movie">
-                    <div class="movie-image" style="margin-right: 20px">
+                    <div class="movie-image">
+{#                                      <span class="play"><span class="name">{{ movie.title }}</span></span>#}
                         <a href="{% url 'movie:movie-detail' movie.pk %}">
                             <img src="{{ movie.image.url }}" alt="{{ movie.title }}"/></a></div>
+                    <div class="rating">
+                        <p>Category : {{ movie.category }}</p>
+                        <span class="comments">{{ movie.view_count }}</span></div>
                 </div>
-
             {% endfor %}
-        {% endif %}
-        <div id="content">
-            {% if recent %}
-                <div class="box">
-                    <div class="head">
-                        <h2>RECENTLY ADDED</h2>
-                        <br/>
-                        <p class="text-right">{% if top or most %}
-                            <a href="{% url 'movie:movie-recent-list' %}">See all</a>{% endif %}</p>
-                    </div>
-                    {% for movie in recent %}
-                        <div class="movie">
-                            <div class="movie-image">
-                                {#              <span class="play"><span class="name">{{ movie.title }}</span></span>#}
-                                <a href="{% url 'movie:movie-detail' movie.pk %}">
-                                    <img src="{{ movie.image.url }}" alt="{{ movie.title }}"/></a></div>
-                            <div class="rating">
-                                <p>RATING</p>
-                                <div class="stars">
-                                    <div class="stars-in"></div>
-                                </div>
-                                <span class="comments">12</span></div>
-                        </div>
-                    {% endfor %}
-                    <div class="cl">&nbsp;</div>
-                </div>
-            {% endif %}
-            {% if top %}
-
-
-                <div class="box">
-                <div class="head">
-                    <h2>TOP RATED</h2>
-                    <br/>
-                    <p class="text-right">{% if recent or most %}
-                        <a href="{% url 'movie:movie-top-list' %}">See all</a>{% endif %}</p>
-                </div>
-                {% for movie in top %}
-                    <div class="movie">
-                        <div class="movie-image">
-                            {#              <span class="play"><span class="name">{{ movie.title }}</span></span>#}
-                            <a href="{% url 'movie:movie-detail' movie.pk %}"><img src="{{ movie.image.url }}"
-                                                                                   alt="{{ movie.title }}"/></a></div>
-                        <div class="rating">
-                            <p>RATING</p>
-                            <div class="stars">
-                                <div class="stars-in"></div>
-                            </div>
-                            <span class="comments">12</span></div>
-                    </div>
-                {% endfor %}
-                <div class="cl">&nbsp;</div>
-            {% endif %}
+            <div class="cl">&nbsp;</div>
             </div>
-            {% if most %}
-                <div class="box">
-                <div class="head">
-                    <h2>MOST COMMENTED</h2>
-                    <br/>
-                    <p class="text-right">{% if top or recent %}
-                        <a href="{% url 'movie:movie-most-list' %}">See all</a>{% endif %}</p>
-                </div>
-                {% for movie in most %}
-                    <div class="movie">
-                        <div class="movie-image">
-                            {#              <span class="play"><span class="name">{{ movie.title }}</span></span> <a href="#">#}
-                            <a href="{% url 'movie:movie-detail' movie.pk %}"> <img src="{{ movie.image.url }}"
-                                                                                    alt="{{ movie.title }}"/></a></div>
-                        <div class="rating">
-                            <p>RATING</p>
-                            <div class="stars">
-                                <div class="stars-in"></div>
-                            </div>
-                            <span class="comments">12</span></div>
-                    </div>
-                {% endfor %}
 
-                <div class="cl">&nbsp;</div>
-            {% endif %}
-            </div>
+
         </div>
         {#        <div id="news">#}
         {#            <div class="head">#}
