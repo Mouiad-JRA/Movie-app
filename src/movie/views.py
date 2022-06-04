@@ -52,14 +52,17 @@ class MovieDetailView(DetailView):
 
     def get_object(self, queryset=None):
         obj = super(MovieDetailView, self).get_object()
-        # TODO: fix this, it's increased by two
-        obj.view_count += 1
-        obj.save()
+
         return obj
 
     def get_context_data(self, **kwargs):
         ctx = super(MovieDetailView, self).get_context_data()
         ctx['links'] = MovieLinks.objects.filter(movie=self.get_object())
+        movie = self.get_object()
+        movie.view_count += 1
+        movie.save()
         return ctx
+
+
 
 
