@@ -16,6 +16,8 @@
                         <p>Category : {{ movie.category }}</p>
                         <span class="comments">{{ movie.view_count }}</span></div>
                 </div>
+                {% empty %}
+                <h3>There are no Movie here</h3>
             {% endfor %}
             <div class="cl">&nbsp;</div>
             </div>
