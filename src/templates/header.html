@@ -1,88 +1,98 @@
 <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
 
-li {
-  float: left;
-}
+    li {
+        float: left;
+    }
 
-li a, .dropbtn {
-  display: inline-block;
-  color: red;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    li a, .dropbtn {
+        display: inline-block;
+        color: red;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
+    li a:hover, .dropdown:hover .dropbtn {
+        background-color: red;
+    }
 
-li.dropdown {
-  display: inline-block;
+    li.dropdown {
+        display: inline-block;
 
-}
+    }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 4;
-}
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: black;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 4;
+    }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
 
-.dropdown-content a:hover {background-color: red;}
+    .dropdown-content a:hover {
+        background-color: red;
+    }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
 <div id="header">
     <h1 id="logo"><a href="#">MovieHunter</a></h1>
     <div id="navigation">
-      <ul>
-        <li><a class="active" href="{% url 'movie:movie-list' %}">HOME</a></li>
-        <li><a href="#">NEWS</a></li>
-      </ul>
+        <ul>
+            <li><a class="active" href="{% url 'movie:movie-list' %}">HOME</a></li>
+            <li><a href="#">NEWS</a></li>
+        </ul>
     </div>
     <div id="sub-navigation">
-      <ul>
-        <li><a href="{% url 'movie:movie-list' %}">SHOW ALL</a></li>
-        <li><a href="{% url 'movie:movie-recent-list' %}">RECENTLY ADDED</a></li>
-        <li><a href="{% url 'movie:movie-most-list' %}">TOP RATED</a></li>
-        <li><a href="{% url 'movie:movie-top-list' %}">MOST WATCHED</a></li>
+        <ul>
+            <li><a href="{% url 'movie:movie-list' %}">SHOW ALL</a></li>
+            <li><a href="{% url 'movie:movie-recent-list' %}">RECENTLY ADDED</a></li>
+            <li><a href="{% url 'movie:movie-most-list' %}">TOP RATED</a></li>
+            <li><a href="{% url 'movie:movie-top-list' %}">MOST WATCHED</a></li>
             <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Category</a>
-    <div class="dropdown-content">
-      <a href="{% url 'movie:movie-category' 'Action' %}">ACTION</a>
-      <a href="{% url 'movie:movie-category' 'Drama' %}">Drama</a>
-      <a href="{% url 'movie:movie-category' 'Comedy' %}">Comedy</a>
-        <a href="{% url 'movie:movie-category' 'Romance' %}">Romance</a>
-        <a href="{% url 'movie:movie-category' 'Horror' %}">Horror</a>
-    </div>
-  </li>
+                <a href="javascript:void(0)" class="dropbtn">Category</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'movie:movie-category' 'Action' %}">ACTION</a>
+                    <a href="{% url 'movie:movie-category' 'Drama' %}">Drama</a>
+                    <a href="{% url 'movie:movie-category' 'Comedy' %}">Comedy</a>
+                    <a href="{% url 'movie:movie-category' 'Romance' %}">Romance</a>
+                    <a href="{% url 'movie:movie-category' 'Horror' %}">Horror</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Filter By languages</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'movie:movie-language' 'english' %}">EN</a>
+                    <a href="{% url 'movie:movie-language' 'arabic' %}">Ar</a>
+                </div>
+            </li>
 
-      </ul>
-      <div id="search">
-        <form action="#" method="get" accept-charset="utf-8">
-          <label for="search-field">SEARCH</label>
-          <input type="text" name="search field" value="Enter search here" id="search-field" class="blink search-field"  />
-          <input type="submit" value="GO!" class="search-button" />
-        </form>
-      </div>
+        </ul>
+        <div id="search">
+            <form action="#" method="get" accept-charset="utf-8">
+                <label for="search-field">SEARCH</label>
+                <input type="text" name="search field" value="Enter search here" id="search-field"
+                       class="blink search-field"/>
+                <input type="submit" value="GO!" class="search-button"/>
+            </form>
+        </div>
     </div>
-  </div>
+</div>

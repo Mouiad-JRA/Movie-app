@@ -13,8 +13,8 @@ class Movie(models.Model):
         ('Horror', 'HORROR'),
     )
     LANGUAGE_CHOICES = (
-        ('EN', 'ENGLISH'),
-        ('AR', 'ARABIC')
+        ('english', 'ENGLISH'),
+        ('arabic', 'ARABIC')
     )
     STATUS_CHOICES = (
         ('R', 'RECENTLY ADDED'),
@@ -25,7 +25,7 @@ class Movie(models.Model):
     description = models.TextField(max_length=1000)
     image = models.ImageField(upload_to='movies')
     category = models.CharField(max_length=8, choices=CATEGORY_CHOICES, default='Action')
-    language = models.CharField(max_length=2, choices=LANGUAGE_CHOICES, default='EN')
+    language = models.CharField(max_length=10, choices=LANGUAGE_CHOICES, default='english')
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='R')
     cast = models.CharField(max_length=255)
     year_of_production = models.DateField()
