@@ -2,6 +2,7 @@ from django.db import models
 
 
 # Create your models here.
+from django.utils.text import slugify
 
 
 class Movie(models.Model):
@@ -30,9 +31,18 @@ class Movie(models.Model):
     cast = models.CharField(max_length=255)
     year_of_production = models.DateField()
     view_count = models.PositiveIntegerField(default=0)
+    movie_trailer = models.URLField()
+    slug = models.SlugField(blank=True, null=True)
 
     def __str__(self):
         return self.title
+    
+    def save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+    ):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(Movie, self).save(force_insert=False, force_update=False, using=None, update_fields=None)
 
 
 class MovieLinks(models.Model):

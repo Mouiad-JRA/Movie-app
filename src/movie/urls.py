@@ -9,7 +9,7 @@ Function views
 Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
+ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
@@ -28,7 +28,7 @@ urlpatterns = [
     path('recent', MovieRecentListView.as_view(), name='movie-recent-list'),
     path('most', MovieMostListView.as_view(), name='movie-most-list'),
     path('top', MovieTopListView.as_view(), name='movie-top-list'),
-    path('<int:pk>', MovieDetailView.as_view(), name='movie-detail'),
+    path('<slug:slug>', MovieDetailView.as_view(), name='movie-detail'),
     path('year/<int:year>', MovieYear.as_view(), name='movie-year'),
 ]
 

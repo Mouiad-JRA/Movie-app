@@ -28,33 +28,26 @@
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="movie-img sticky-sb">
                                 <img src="{{ movie.image.url }}" alt="">
-                                {#					<div class="movie-btn">#}
-                                {#						<div class="btn-transform transform-vertical red">#}
-                                {#							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>#}
-                                {#							<div><a href="https://www.youtube.com/embed/o-0hcF97wy0" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>#}
-                                {#						</div>#}
-                                {#					</div>#}
+                              <br/>
+                              <br/>
+                              <br/>
+                                					<div class="movie-btn">
+                                						<div class="btn-transform transform-vertical red">
+                                							<div><a href="{{ movie.movie_trailer }}" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
+                                							<div><a href="{{ movie.movie_trailer }}" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+                                						</div>
+                                					</div>
                             </div>
                         </div>
-                        {#					<div class="social-btn">#}
-                        {#						<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>#}
-                        {#						<div class="hover-bnt">#}
-                        {#							<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>#}
-                        {#							<div class="hvr-item">#}
-                        {#								<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>#}
-                        {#								<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>#}
-                        {#								<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>#}
-                        {#								<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>#}
-                        {#							</div>#}
-                        {#						</div>#}
-                        {#					</div>#}
+
 
                         <div class="movie-tabs">
                             <div class="tabs">
                                 <ul class="tab-links tabs-mv">
                                     <li class="active" style="font-size:large ">{{ movie.category }} Movie</li>
-                                    <li style="font-size: large"> Rate</li>
+                                   <br/>
                                     <li style="font-size: large"> Number of Views : {{ movie.view_count }} Views</li>
+                                <br/>
                                     {% for link in links %}
                                      <li style="font-size: large">
                                      {% if link.type == 'D' %}
