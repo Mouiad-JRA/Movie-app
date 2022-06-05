@@ -1,4 +1,5 @@
 from django.views.generic import ListView, DetailView
+from django.views.generic.dates import YearArchiveView
 
 from .models import Movie, MovieLinks
 
@@ -89,3 +90,11 @@ class MovieSearch(ListView):
         else:
             object_list = self.model.objects.none()
         return object_list
+
+
+class MovieYear(YearArchiveView):
+    queryset = Movie.objects.all()
+    date_field = 'year_of_production'
+    make_object_list = True
+    allow_future = True
+

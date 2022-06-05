@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    <div id="main">
+
+        <div id="content">
+        {% if movie_language %}
+        {{ movie_language }} Movies
+        {% endif %}
+            {% for movie in object_list %}
+                <div class="box">
+                <div class="movie">
+                    <div class="movie-image">
+                        {#                                      <span class="play"><span class="name">{{ movie.title }}</span></span>#}
+                        <a href="{% url 'movie:movie-detail' movie.pk %}">
+                            <img src="{{ movie.image.url }}" alt="{{ movie.title }}"/></a></div>
+                    <div class="rating">
+                        <p>Category : {{ movie.category }}</p>
+                        <span class="comments">{{ movie.view_count }}</span></div>
+                </div>
+                {% empty %}
+                <h3>There are no Movie here</h3>
+            {% endfor %}
+            <div class="cl">&nbsp;</div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+{% endblock %}

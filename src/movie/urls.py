@@ -17,7 +17,7 @@ Including another URLconf
 from django.urls import path
 
 from .views import MovieDetailView, MovieListView, MovieRecentListView, MovieTopListView, MovieMostListView, \
-    MovieCategory, MovieLanguage, MovieSearch
+    MovieCategory, MovieLanguage, MovieSearch, MovieYear
 
 app_name = 'movie'
 urlpatterns = [
@@ -29,5 +29,6 @@ urlpatterns = [
     path('most', MovieMostListView.as_view(), name='movie-most-list'),
     path('top', MovieTopListView.as_view(), name='movie-top-list'),
     path('<int:pk>', MovieDetailView.as_view(), name='movie-detail'),
+    path('year/<int:year>', MovieYear.as_view(), name='movie-year'),
 ]
 

@@ -63,7 +63,6 @@
     </div>
     <div id="sub-navigation">
         <ul>
-            <li><a href="{% url 'movie:movie-list' %}">SHOW ALL</a></li>
             <li><a href="{% url 'movie:movie-recent-list' %}">RECENTLY ADDED</a></li>
             <li><a href="{% url 'movie:movie-most-list' %}">TOP RATED</a></li>
             <li><a href="{% url 'movie:movie-top-list' %}">MOST WATCHED</a></li>
@@ -78,13 +77,26 @@
                 </div>
             </li>
             <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Filter By languages</a>
+                <a href="javascript:void(0)" class="dropbtn">Movie languages</a>
                 <div class="dropdown-content">
                     <a href="{% url 'movie:movie-language' 'english' %}">EN</a>
                     <a href="{% url 'movie:movie-language' 'arabic' %}">Ar</a>
                 </div>
             </li>
-
+     <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Year</a>
+                <div class="dropdown-content">
+                    <a href="{% url 'movie:movie-year' '2014' %}">2014</a>
+                    <a href="{% url 'movie:movie-year' '2015' %}">2015</a>
+                    <a href="{% url 'movie:movie-year' '2016' %}">2016</a>
+                    <a href="{% url 'movie:movie-year' '2017' %}">2017</a>
+                    <a href="{% url 'movie:movie-year' '2018'%}">2018</a>
+                    <a href="{% url 'movie:movie-year' '2019' %}">2019</a>
+                    <a href="{% url 'movie:movie-year' '2020' %}">2020</a>
+                    <a href="{% url 'movie:movie-year' '2021'%}">2021</a>
+                    <a href="{% url 'movie:movie-year' '2022'%}">2022</a>
+                </div>
+            </li>
         </ul>
         <div id="search">
             <form action="{% url 'movie:movie-search' %}" method="GET" accept-charset="utf-8">
