@@ -28,15 +28,18 @@
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="movie-img sticky-sb">
                                 <img src="{{ movie.image.url }}" alt="">
-                              <br/>
-                              <br/>
-                              <br/>
-                                					<div class="movie-btn">
-                                						<div class="btn-transform transform-vertical red">
-                                							<div><a href="{{ movie.movie_trailer }}" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
-                                							<div><a href="{{ movie.movie_trailer }}" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
-                                						</div>
-                                					</div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div class="movie-btn">
+                                    <div class="btn-transform transform-vertical red">
+                                        <div><a href="{{ movie.movie_trailer }}" class="item item-1 redbtn"> <i
+                                                class="ion-play"></i> Watch Trailer</a></div>
+                                        <div><a href="{{ movie.movie_trailer }}"
+                                                class="item item-2 redbtn fancybox-media hvr-grow"><i
+                                                class="ion-play"></i></a></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -45,20 +48,38 @@
                             <div class="tabs">
                                 <ul class="tab-links tabs-mv">
                                     <li class="active" style="font-size:large ">{{ movie.category }} Movie</li>
-                                   <br/>
+                                    <br/>
                                     <li style="font-size: large"> Number of Views : {{ movie.view_count }} Views</li>
-                                <br/>
+                                    <br/>
                                     {% for link in links %}
-                                     <li style="font-size: large">
-                                     {% if link.type == 'D' %}
-                                         Download the Movie Now:
-                                         {% elif link.type == 'W' %}
-                                         To Watch the Movie here is the movie:
-                                     <a href="{{ link.link }}"> Link</a>
-                                     {% endif %}
-                                     </li>
+                                        <li style="font-size: large">
+                                            {% if link.type == 'D' %}
+                                                Download the Movie Now:
+                                            {% elif link.type == 'W' %}
+                                                To Watch the Movie here is the movie:
+                                                <a href="{{ link.link }}"> Link</a>
+                                            {% endif %}
+                                        </li>
                                     {% endfor %}
+                                <br>
+                                <br>
+                                <h2> Related Movie</h2>
+                                                {% for movie in related_movies %}
+
+
+                                        <div class="box">
+                                        <div class="movie">
+                                            <div class="movie-image">
+
+                                                <a href="{% url 'movie:movie-detail' movie.slug %}">
+                                                    <img src="{{ movie.image.url }}" alt="{{ movie.title }}"/></a></div>
+                                        </div>
+
+                                    {% endfor %}
+                                    </div>
                                 </ul>
+         <br>
+                                <br>
                                 <div class="tab-content">
                                     <div id="overview" class="tab active">
                                         <div class="row">
@@ -67,21 +88,25 @@
                                                 <h2 style="color: red; font-family: Chilanka; font-size: large">{{ movie.description }}    </h2>
 
                                             </div>
+
                                             <div class="title-hd-sm">
                                                 <h4>cast</h4>
                                                 <div class="mvcast-item">
-                                                <div class="cast-it">
-                                                    <div class="cast-left">
-                                                          <p>{{ movie.cast }}</p>
+                                                    <div class="cast-it">
+                                                        <div class="cast-left">
+                                                            <p>{{ movie.cast }}</p>
+                                                        </div>
+
                                                     </div>
 
                                                 </div>
-
-                                            </div>
                                             </div>
 
                                         </div>
                                     </div>
+
+                                    </div>
+
 
                                 </div>
                             </div>
@@ -90,7 +115,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
     </body>
 
