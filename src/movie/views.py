@@ -101,3 +101,4 @@ class MovieYear(YearArchiveView):
     make_object_list = True
     allow_future = True
 
+
