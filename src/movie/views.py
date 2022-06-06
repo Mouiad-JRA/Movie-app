@@ -39,7 +39,6 @@ class MovieDetailView(DetailView):
         movie.save()
         ctx['related_movies'] = Movie.objects.filter(
             category=self.get_object().category) #.order_by('created')[0:3]
-        print(ctx)
         return ctx
 
 
