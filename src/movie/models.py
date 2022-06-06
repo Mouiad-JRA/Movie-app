@@ -2,6 +2,7 @@ from django.db import models
 
 
 # Create your models here.
+from django.utils import timezone
 from django.utils.text import slugify
 
 
@@ -33,6 +34,7 @@ class Movie(models.Model):
     view_count = models.PositiveIntegerField(default=0)
     movie_trailer = models.URLField()
     slug = models.SlugField(blank=True, null=True)
+    created = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return self.title
