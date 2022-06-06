@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-jip%lf1d=2!2vrzg%xp3+d5ynb$m776eir&f5p)0(a0e4^!^ly
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['movie-hunter-app.herokuapp.com']
 
 # Application definition
 
